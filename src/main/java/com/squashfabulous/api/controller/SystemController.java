@@ -13,7 +13,7 @@ public class SystemController {
 
     @GetMapping(path = "/ping")
     @ResponseBody
-    public Mono<ResponseEntity<String>> ping() {
-        return Mono.just(ResponseEntity.ok("pong"));
+    public ResponseEntity<Mono<String>> ping() {
+        return ResponseEntity.ok(Mono.just("pong"));
     }
 }
